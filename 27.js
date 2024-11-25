@@ -21,7 +21,7 @@ function solution(phone_number) {
     let result = [];
     let phoneLength = phone_number.length;
     let phoneNumberArray = phone_number.split('');
-    console.log('phoneNumberArray', phoneNumberArray);
+    // console.log('phoneNumberArray', phoneNumberArray);
     phoneNumberArray.forEach(
         function (num1, index) {
             if (index < (phoneLength - 4)) {
@@ -37,7 +37,7 @@ function solution(phone_number) {
     )
     // console.log(secretPhoneNumber)
     let answer = result.join('');
-    console.log("result.join('')", result.join(''));
+    // console.log("result.join('')", result.join(''));
     // console.log('result', result);
     return answer;
 }
