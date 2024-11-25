@@ -17,29 +17,45 @@
 // 길이 앞의 문자는 * 로 변경하고 > 
 // ... 으로 합쳐준다.
 
-function solution(phone_number) {
-    let result = [];
-    let phoneLength = phone_number.length;
-    let phoneNumberArray = phone_number.split('');
-    // console.log('phoneNumberArray', phoneNumberArray);
-    phoneNumberArray.forEach(
-        function (num1, index) {
-            if (index < (phoneLength - 4)) {
-                // console.log('index',index);
-                num1 = '*';
-                result.push(num1);
-                // console.log('적용후 넘1', num1);
-            }
-            else {
-                result.push(num1);
-            }
-        }
-    )
-    // console.log(secretPhoneNumber)
-    let answer = result.join('');
-    // console.log("result.join('')", result.join(''));
-    // console.log('result', result);
-    return answer;
-}
-// solution('01088213294');
-console.log(solution('01088213294'))
+// function solution(phone_number) {
+//     let result = [];
+//     let phoneLength = phone_number.length;
+//     let phoneNumberArray = phone_number.split('');
+//     // console.log('phoneNumberArray', phoneNumberArray);
+//     phoneNumberArray.forEach(
+//         function (num1, index) {
+//             if (index < (phoneLength - 4)) {
+//                 // console.log('index',index);
+//                 num1 = '*';
+//                 result.push(num1);
+//                 // console.log('적용후 넘1', num1);
+//             }
+//             else {
+//                 result.push(num1);
+//             }
+//         }
+//     )
+//     // console.log(secretPhoneNumber)
+//     let answer = result.join('');
+//     // console.log("result.join('')", result.join(''));
+//     // console.log('result', result);
+//     return answer;
+// }
+// // solution('01088213294');
+// console.log(solution('01012344321'))
+
+
+
+// 감탄한 정답
+
+// 1
+// function hide_numbers(s){
+//     var result = "*".repeat(s.length - 4) + s.slice(-4);
+//     return result;
+// }
+// console.log("결과 : " + hide_numbers('01033334444'));
+
+
+// 2 : fill 이라는 함수가 있구나...
+// const solution = n => [...n].fill("*",0,n.length-4).join("")
+// console.log(solution('01012344321'))
