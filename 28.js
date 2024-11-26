@@ -57,35 +57,43 @@
 // numbers에서 찾을 수 없는 0부터 9까지의 숫자를 모두 찾아 더한 수를 
 // return 하도록 solution 함수를 완성해주세요.
 
-function solution(numbers) {
-    let answer = 0;
-    let num = [];
-    makeNum(num);
-    checkNum(num, numbers);
-    answer = calcNum(num, answer);
-    return answer;
-  }
-  function calcNum(num, answer) {
-    let ans = answer;
-    num.forEach(el => {
-      el[1] == 0 ? ans+=el[0] : ans
-    });
-    return ans;
-  }
-  function checkNum(num, numbers) {
-    for (let i = 0; i < numbers.length; i++) {
-      for (let j = 0; j < num.length; j++) {
-        if (num[j][0] == numbers[i]) {
-          num[j][1] += 1;
-          break;
-        } else continue;
-      }
-    }
-  }
-  function makeNum(num) {
-    for (let i = 0; i < 10; i++) {
-      num.push([i,0]);
-    }
-  }
+
+// ** 다른사람 코드를 해석할 때> 변수값을 적어가면서 해석하기!!
+
+// function solution(numbers) {
+//     let answer = 0;
+//     let num = [];
+//     makeNum(num);
+//     // num = [[0,0],[1,0],[2,0],[3,0],[4,0]~]
+//     checkNum(num, numbers);
+//     answer = calcNum(num, answer);
+//     return answer;
+//   }
+//   function calcNum(num, answer) {
+//     let ans = answer;
+//     num.forEach(el => {
+//       el[1] == 0 ? ans+=el[0] : ans
+//     });
+//     return ans;
+//   }
+//   function checkNum(num, numbers) { 
+//     // num = [[0,0],[1,0],[2,0],[3,0],[4,0]~]
+//     // numbers = [5,8,4,0,6,7,9]
+//     for (let i = 0; i < numbers.length; i++) {
+//       for (let j = 0; j < num.length; j++) {
+//         // num[0][0] == numbers[0] ->  0 == 5
+//         if (num[j][0] == numbers[i]) {
+//           num[j][1] += 1;
+//           break;
+//         } else continue;
+//       }
+//     }
+//   }
+//   function makeNum(num) {
+//     for (let i = 0; i < 10; i++) {
+//       num.push([i,0]);
+//     } 
+//     // num = [[0,0],[1,0],[2,0],[3,0],[4,0]~]
+//   }
   
-  console.log(solution([5,8,4,0,6,7,9]));
+//   console.log(solution([5,8,4,0,6,7,9]));
