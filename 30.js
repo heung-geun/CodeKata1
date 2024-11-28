@@ -13,8 +13,26 @@
 
 function solution(s) {
     let answer = '';
-    
-    return answer;
+    if(s.length % 2 === 0) {
+        answer = s.slice(((s.length / 2) - 1), ((s.length / 2) + +1));
+    } else {
+        answer = s.slice((s.length - 1) / 2, ((s.length - 1) / 2) + 1);
+    }
+    return String(answer);
 }
 
 console.log(solution("abcde")); // "c"
+console.log();
+console.log(solution("qwer"));
+
+// let str3 = "123456789012";
+
+// slice > 시작 위치, 시작위치에서 끝나는 지점
+// console.log(str3.slice(7, 11)); // 8901
+
+
+// 한줄 답안
+
+// function solution(s) {
+//     return s.substr(Math.ceil(s.length / 2) - 1, s.length % 2 === 0 ? 2 : 1);
+// }
