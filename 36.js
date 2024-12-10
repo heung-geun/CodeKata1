@@ -12,16 +12,32 @@
 // "a234"	   false
 // "1234"	   true
 
+// 아래와 같이 생각해서 푸는 방법은 0x11 과 같은
+// 16진법을 nan으로 반환하지 않기 때문에 아래 코드 사용 불가능
+
+// function solution(s) {
+//   let sType = Number(s);
+//   console.log(s.length);
+//   if (isNaN(sType) === true) {
+//     return false;
+//   } else if (s.length === 4 || s.length === 6) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// // 오답 나오는 문자열
+// console.log(solution("0x16")); // 16진수의 헥사데시멀 표기법
+// console.log(solution("11e3")); // 지수함수
+
 function solution(s) {
-  let sType = typeof Number(s);
-  console.log(sType);
-  if (isNaN(sType) === true) {
-    console.log(isNaN(sType));
+  if (s.length !== 4 && s.length !== 6) {
     return false;
   }
-  return true;
+  const numTest = /^[0-9]+$/;
+  return numTest.test(s);
 }
 
-console.log(solution("a234"));
-console.log("");
-console.log(solution("1234"));
+console.log(solution("0x11"));
+console.log(solution("11e3"));
+console.log(solution("0001"));
