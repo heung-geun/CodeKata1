@@ -29,41 +29,26 @@
 
 function solution(n) {
   let answer = 0;
-  let ternaryN = 1;
-  let i = 1;
-  while (true) {
-    let x = 3 * i;
-    if (n - x * 3 < x) {
-      ternaryN = i;
-      break;
-    }
-    i++;
+  let ternary = "";
+
+  // n이 0일 경우, 3진법으로 변환한 결과는 '0'입니다.
+  if (n === 0) return "0";
+
+  while (n > 0) {
+    // n을 3으로 나눈 나머지를 구하고, 이를 answer의 앞에 추가합니다.
+    ternary = (n % 3).toString() + ternary;
+    // n을 3으로 나누어 다음 반복을 위해 값을 업데이트합니다.
+    n = Math.floor(n / 3);
+  }
+  let ternaryArr = ternary.split("");
+  console.log(ternaryArr);
+  for (let i = 0; i < ternaryArr.length; i++) {
+    console.log("ternaryArr[i]", ternaryArr[i]);
+    let result = parseInt(ternaryArr[i], 10); // 각 자리의 숫자를 가져옵니다.
+    console.log(result * Math.pow(3, i));
+    answer += result * Math.pow(3, i);
   }
 
-  let j = i;
-  let result = n;
-  let minusRes = 0;
-  let a = "";
-
-  // a에 값에 1, 2, 3 중에 하나 넣을거임
-  while (j > 0) {
-    result = result - minusRes;
-    for (let i = 3 - 1; i > 0; i--) {
-      console.log("forA= ", a);
-      let x = Math.pow(3, j);
-      console.log("x=", x);
-      if (result === 0) {
-        a += 0;
-      } else if (result - x * i <= 0) {
-        a += i;
-        minusRes = result - x * (i - 1);
-      }
-    }
-    j--;
-  }
-  console.log("a= ", a);
-
-  // let reversal = ternary.reverse();
   return answer;
 }
 
