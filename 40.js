@@ -53,3 +53,8 @@ function solution(n) {
 }
 
 console.log(solution(45));
+
+// 진법을 변환해주는 함수 > parseInt()
+// function solution(n) {
+//   return parseInt(n.toString(3).split("").reverse().join(""), 3);
+// }
