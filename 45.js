@@ -20,6 +20,26 @@
 // "a B z"	 4	"e F d"
 
 function solution(s, n) {
-  var answer = "";
+  let answer = "";
+  let sArr = s.split("");
+  let resultSArr = sArr.map((item) => {
+    if (item === " ") {
+      return " ";
+    } else if (item.charCodeAt(0) + n > 122) {
+      let num = item.charCodeAt(0);
+      return String.fromCharCode(num + n - 26);
+    }
+    let num = item.charCodeAt(0);
+    console.log("num", num);
+    console.log(n);
+    console.log("num + n", num + n);
+    console.log("String.fromCharCode(num + n)", String.fromCharCode(num + n));
+    return String.fromCharCode(num + n);
+  });
+  answer = resultSArr.join("");
   return answer;
 }
+
+console.log("결과는? =", solution("AB", 1));
+console.log("결과는? =", solution("z", 1));
+console.log("결과는? =", solution("a B z", 4));
