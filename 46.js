@@ -36,30 +36,30 @@
 // 제한시간 안내
 // 정확성 테스트 : 10초
 
-// function solution(s) {
-//   const number = [
-//     "zero",
-//     "one",
-//     "two",
-//     "three",
-//     "four",
-//     "five",
-//     "six",
-//     "seven",
-//     "eight",
-//     "nine"
-//   ];
-//   const answer = number.reduce((str, word, index) => {
-//     const regex = new RegExp(word, "g");
-//     return str.replace(regex, index);
-//   }, s);
-//   return +answer;
-// }
+function solution(s) {
+  const number = [
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine"
+  ];
+  const answer = number.reduce((str, word, index) => {
+    const regex = new RegExp(word, "g");
+    return str.replace(regex, index);
+  }, s);
+  return +answer;
+}
 
-// console.log(solution("one4seveneight"));
-// console.log(solution("23four5six7"));
-// console.log(solution("2three45sixseven"));
-// console.log(solution("1234"));
+console.log(solution("one4seveneight"));
+console.log(solution("23four5six7"));
+console.log(solution("2three45sixseven"));
+console.log(solution("1234"));
 
 // 정규 표현식을
 // const array = ["사과", "바나나", "체리"];
@@ -72,25 +72,26 @@
 
 // console.log(updatedString);
 
-function solution(s) {
-  let numbers = [
-    "zero",
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
-    "six",
-    "seven",
-    "eight",
-    "nine"
-  ];
-  var answer = s;
+// function solution(s) {
+//   let numbers = [
+//     "zero",
+//     "one",
+//     "two",
+//     "three",
+//     "four",
+//     "five",
+//     "six",
+//     "seven",
+//     "eight",
+//     "nine"
+//   ];
+//   var answer = s;
 
-  for (let i = 0; i < numbers.length; i++) {
-    let arr = answer.split(numbers[i]);
-    answer = arr.join(i);
-  }
+//   for (let i = 0; i < numbers.length; i++) {
+//     let arr = answer.split(numbers[i]);
+//     answer = arr.join(i);
+//   }
 
-  return Number(answer);
-}
+//   return Number(answer);
+// }
+// console.log(updatedString);
