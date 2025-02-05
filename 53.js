@@ -15,18 +15,22 @@
 //  매일 발표된 명예의 전당의 최하위 점수를 return하는 solution 함수를 완성해주세요.
 
 function solution(k, score) {
+  let scoreSort = [];
   let answer = [];
+  for (let i = 0; i < score.length; i++) {
+    if (answer.length < k) {
+      scoreSort.push(score[i]);
+      scoreSort.sort((a, b) => b - a);
+      answer.push(scoreSort[i]);
+      console.log(" scoreSort = ", scoreSort);
+    } else {
+      scoreSort.push(score[i]);
+      scoreSort.sort((a, b) => b - a);
+      answer.push(scoreSort[k - 1]);
+      console.log(" scoreSort = ", scoreSort);
+    }
+  }
   return answer;
 }
 
-let abc = {
-  message: "보드 상세 조회 성공",
-  data: [
-    {
-      "1listId": "1",
-      title: "card1",
-      card: [{ caredId: 1, cardColor: "#1241235", title: "cardTitle" }]
-    },
-    { listId: "2", title: "card2" }
-  ]
-};
+console.log(solution(3, [10, 100, 20, 150, 1, 100, 200]));
